@@ -1,0 +1,55 @@
+@mixin fontFamily {
+  font-family: 'Karla', sans-serif;
+}
+
+.form {
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  gap: 17px;
+
+  &__button {
+    grid-column: 1/-1;
+    background-image: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__input {
+    border: 1px solid #d5d4d8;
+    text-indent: 5px;
+  }
+
+  &__button,
+  &__input {
+    @include fontFamily;
+    border-radius: 5px;
+  }
+}
+
+.meme {
+  position: relative;
+
+  &__image {
+    width: 100%;
+    margin: 3rem auto;
+    display: block;
+  }
+
+  &__text {
+    position: absolute;
+    color: white;
+    font-size: 5rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.8));
+
+    &--top {
+      top: 25px;
+    }
+
+    &--bottom {
+      bottom: 25px;
+    }
+  }
+}
